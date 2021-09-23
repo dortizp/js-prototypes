@@ -1,16 +1,29 @@
 // -> Create a machine object
 //    with a property motors = 4
-__;
+const Machine = function () {
+    this.motors = 4;
+}
+
+let machine = new Machine();
+
 
 // -> Create a robot object
 //    with a property friendly = true
-__;
+const Robot = function () {
+    this.friendly = true;
+}
+
+let robot = new Robot();
 
 // -> Create a robby object
-__;
+let robby = Object.create(robot);
 
 // -> Make machine the prototype of robot
-__;
+robot.__proto__ = machine;
+console.log(robot.motors);
 
 // -> Make robot the prototype of robby
-__;
+//robby = robot.prototype;
+robby.__proto__ = robot;
+console.log(robby.motors);
+
